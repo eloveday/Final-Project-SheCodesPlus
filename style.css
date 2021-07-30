@@ -31,3 +31,7 @@
 #weather-description {
   text-transform: capitalize;
 }
+
+img {
+  float: right;
+}
