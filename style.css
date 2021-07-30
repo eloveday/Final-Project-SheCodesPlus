@@ -27,3 +27,7 @@
   font-size: 22px;
   color: #7dace4;
 }
+
+#weather-description {
+  text-transform: capitalize;
+}
