@@ -52,8 +52,8 @@ let months = [
 let today = document.querySelector("#current-day");
 today.innerHTML = days[currentDay];
 
-let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML = currentDate;
+let todaysDate = document.querySelector("#current-date");
+todaysDate.innerHTML = currentDate;
 
 let thisMonth = document.querySelector("#month");
 thisMonth.innerHTML = months[currentMonth];
