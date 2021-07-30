@@ -25,3 +25,41 @@ function getForecast(event) {
 
 let submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", getForecast);
+
+let now = new Date();
+let currentDay = now.getDay();
+let currentHour = now.getHours();
+let currentMinute = now.getMinutes();
+let currentDate = now.getDate();
+let currentMonth = now.getMonth();
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+let today = document.querySelector("#current-day");
+today.innerHTML = days[currentDay];
+
+let currentDate = document.querySelector("#current-date");
+currentDate.innerHTML = currentDate;
+
+let thisMonth = document.querySelector("#month");
+thisMonth.innerHTML = months[currentMonth];
+
+let hour = document.querySelector("#current-hour");
+hour.innerHTML = currentHour;
+
+let minute = document.querySelector("#current-minute");
+minute.innerHTML = currentMinute;
