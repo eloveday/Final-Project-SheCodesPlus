@@ -52,3 +52,9 @@ img {
 .main-text {
   color: #8971d0;
 }
+#code-link {
+  font-size: 10px;
+  position: relative;
+  top: 50px;
+  left: 5px;
+}
