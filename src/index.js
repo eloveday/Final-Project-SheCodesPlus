@@ -26,6 +26,8 @@ function changeForecast(response) {
 
 function getForecast(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let cityName = document.querySelector("#city-form");
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=b0c4e3d6536928938df05e87e36cbcb5&units=metric`;
   axios.get(apiURL).then(changeForecast);

@@ -26,6 +26,7 @@
 #current-temperature {
   font-size: 22px;
   color: #7dace4;
+  font-weight: bold;
 }
 
 #weather-description {
@@ -37,7 +38,7 @@ img {
 }
 
 .active {
-  color: black;
+  color: #7dace4;
   text-decoration: none;
   cursor: default;
 }
@@ -45,5 +46,9 @@ img {
 .active:hover {
   text-decoration: none;
   cursor: default;
-  color: black;
+  color: #7dace4;
+}
+
+.main-text {
+  color: #8971d0;
 }
