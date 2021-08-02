@@ -37,17 +37,6 @@ img {
   float: right;
 }
 
-.active {
-  color: #7dace4;
-  text-decoration: none;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
-  cursor: default;
-  color: #7dace4;
-}
 
 .main-text {
   color: #8971d0;

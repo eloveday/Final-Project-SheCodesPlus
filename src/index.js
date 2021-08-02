@@ -1,4 +1,4 @@
-function changeForecast(response) {
+function changeWeather(response) {
   let getCityName = document.querySelector("#city-form");
   let newCityName = document.querySelector("#city-name");
   newCityName.innerHTML = getCityName.value;
@@ -24,36 +24,20 @@ function changeForecast(response) {
   );
 }
 
-function getForecast(event) {
+function getWeather(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   let cityName = document.querySelector("#city-form");
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=b0c4e3d6536928938df05e87e36cbcb5&units=metric`;
-  axios.get(apiURL).then(changeForecast);
+  axios.get(apiURL).then(changeWeather);
 }
 
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
 
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
 
-let celsiusTemperature = null;
 
 let submitButton = document.querySelector("#submit-button");
-submitButton.addEventListener("click", getForecast);
+submitButton.addEventListener("click", getWeather);
 
 let now = new Date();
 let currentDay = now.getDay();
