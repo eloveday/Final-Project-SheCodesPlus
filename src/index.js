@@ -1,3 +1,9 @@
+function defaultWeather(city){
+  
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b0c4e3d6536928938df05e87e36cbcb5&units=metric`;
+  axios.get(apiURL).then(changeWeather);
+}
+
 function formatDay(timestamp){
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -51,13 +57,13 @@ axios.get(apiURL).then(displayForecast)
 
 function changeWeather(response) {
   let getCityName = document.querySelector("#city-form");
-  let newCityName = document.querySelector("#city-name");
+  let newCityName = response.data.name;
   newCityName.innerHTML = getCityName.value;
 
   celsiusTemperature = response.data.main.temp;
 
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature);
+  currentTemperature.innerHTML = Math.round(celsiusTemperature) + "°C";
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = Math.round(response.data.wind.speed) + "mph";
@@ -138,7 +144,7 @@ let minute = document.querySelector("#current-minute");
 minute.innerHTML = currentMinute;
 
  
-
+defaultWeather("London");
 
 
 

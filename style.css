@@ -1,7 +1,7 @@
 .containerMain {
   margin: 0 auto;
-  height: 325px;
-  width: 500px;
+  max-height: 60%;
+  max-width: 50%;
   border: 1px solid black;
   border-radius: 5px;
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
@@ -33,7 +33,7 @@
   text-transform: capitalize;
 }
 
-img {
+#icon {
   float: right;
 }
 
@@ -44,6 +44,11 @@ img {
 #code-link {
   font-size: 10px;
   position: relative;
-  top: 50px;
+  top: 15px;
   left: 5px;
+}
+
+#forecast{
+  margin-left:10px;
+  margin-top: 5px;
 }
