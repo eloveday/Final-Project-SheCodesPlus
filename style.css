@@ -26,6 +26,7 @@
   font-size: 22px;
   font-weight: bold;
   color: #8971d0;
+  text-transform: capitalize;
 }
 
 #current-temperature {

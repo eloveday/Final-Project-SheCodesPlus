@@ -4,10 +4,8 @@ function displayDefaultWeather(response) {
   let newCityName = document.querySelector("#city-name");
   newCityName.innerHTML = getCityName;
 
-  celsiusTemperature = response.data.main.temp;
-
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature) + "°C";
+  currentTemperature.innerHTML = Math.round(response.data.main.temp) + "°C";
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML =
@@ -83,14 +81,12 @@ function getForecast(coordinates) {
 }
 
 function changeWeather(response) {
-  let getCityName = document.querySelector("#city-form");
+  let cityName = response.data.name;
   let newCityName = document.querySelector("#city-name");
-  newCityName.innerHTML = getCityName.value;
-
-  celsiusTemperature = response.data.main.temp;
+  newCityName.innerHTML = cityName;
 
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature) + "°C";
+  currentTemperature.innerHTML = Math.round(response.data.main.temp) + "°C";
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML =
@@ -118,6 +114,21 @@ function getWeather(event) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=b0c4e3d6536928938df05e87e36cbcb5&units=metric`;
   axios.get(apiURL).then(changeWeather);
 }
+
+function defineCurrentPosition(coordinates) {
+  let latitude = coordinates.coords.latitude;
+  let longitude = coordinates.coords.longitude;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=b0c4e3d6536928938df05e87e36cbcb5&units=metric`;
+  axios.get(apiURL).then(changeWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(defineCurrentPosition);
+}
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 let submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", getWeather);
