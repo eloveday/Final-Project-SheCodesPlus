@@ -10,13 +10,14 @@ function displayDefaultWeather(response) {
   currentTemperature.innerHTML = Math.round(celsiusTemperature) + "°C";
 
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = Math.round(response.data.wind.speed) + "mph";
+  windSpeed.innerHTML =
+    "Wind speed: " + Math.round(response.data.wind.speed) + "mph";
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
 
   let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = response.data.main.humidity + "%";
+  currentHumidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
@@ -92,13 +93,14 @@ function changeWeather(response) {
   currentTemperature.innerHTML = Math.round(celsiusTemperature) + "°C";
 
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = Math.round(response.data.wind.speed) + "mph";
+  windSpeed.innerHTML =
+    "Wind speed: " + Math.round(response.data.wind.speed) + "mph";
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
 
   let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = response.data.main.humidity + "%";
+  currentHumidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
