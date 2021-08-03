@@ -1,7 +1,7 @@
 .containerMain {
   margin: 0 auto;
   max-height: 60%;
-  max-width: 50%;
+  max-width: 40%;
   border: 1px solid black;
   border-radius: 5px;
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
@@ -37,10 +37,6 @@
 
 #weather-description {
   text-transform: capitalize;
-}
-
-#icon {
-  float: right;
 }
 
 .main-text {
